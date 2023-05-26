@@ -82,7 +82,7 @@ call vundle#end()
 
 
 
-# 少しだけ変えているhybrid
+" 少しだけ変えているhybrid
 colorscheme hybrid
 set bg=dark
 " ここは上書き
