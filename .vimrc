@@ -20,15 +20,12 @@ let g:lsp_settings = {
 \     }
 \   },
 \}
-
 " Hide signcolumn.
 let g:lsp_diagnostics_signs_enabled = 0
 " Hide virtual text, which is showing according to flake8 but noisy
 let g:lsp_diagnostics_virtual_text_enabled = 0
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_diagnostics_float_cursor = 1
-
-
 Plugin 'mattn/vim-lsp-settings'
 Plugin 'mattn/vim-goimports'
 
@@ -41,12 +38,15 @@ Plugin 'Shougo/ddc-ui-native'
 
 " Install your sources
 Plugin 'Shougo/ddc-source-around'
+Plugin 'shun/ddc-source-vim-lsp'
+Plugin 'LumaKernel/ddc-file'
 
 " Install your filters
 Plugin 'Shougo/ddc-matcher_head'
 Plugin 'Shougo/ddc-sorter_rank'
+Plugin 'Shougo/ddc-converter_remove_overlap'
 
-Plugin 'shun/ddc-source-vim-lsp'
+
 
 
 " easy mostion
@@ -216,17 +216,31 @@ call ddc#custom#patch_global('ui', 'native')
 " https://github.com/Shougo/ddc-source-around
 call ddc#custom#patch_global('sources', ['around'])
 
+"Use file completion
+" なぜかdirectoryを認識していない? python にて /
+" をエスケープして補完している。。
+call ddc#custom#patch_global('sources', ['file'])
+
 " Use matcher_head and sorter_rank.
 " https://github.com/Shougo/ddc-matcher_head
 " https://github.com/Shougo/ddc-sorter_rank
 call ddc#custom#patch_global('sourceOptions', #{
       \ _: #{
       \   matchers: ['matcher_head'],
-      \   sorters: ['sorter_rank']},
+      \   sorters: ['sorter_rank'],
+      \ },
       \ })
 
+call ddc#custom#patch_global('sourceOptions', {
+    \ 'file': {
+    \   'mark': 'F',
+    \   'isVolatile': v:true,
+    \   'forceCompletionPattern': '\S/\S*',
+    \ }})
 
-
+call ddc#custom#patch_global('sourceParams', {
+      \ 'file': { 'trailingSlash': v:true},
+      \ })
 
 " for ddc-source-vim-lsp
 call ddc#custom#patch_global('sources', ['vim-lsp'])
