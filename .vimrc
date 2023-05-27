@@ -54,7 +54,7 @@ Plugin 'easymotion/vim-easymotion'
 let g:EasyMotion_do_mapping = 0
 xmap <Space><Space> <Plug>(easymotion-s2)
 nmap <Space><Space> <Plug>(easymotion-overwin-f2)
-"
+
 Plugin 'preservim/nerdtree' 
 " ツリー幅
 let NERDTreeWinSize=24
@@ -89,6 +89,7 @@ set bg=dark
 autocmd ColorScheme * highlight LineNr ctermfg=23
 
 filetype indent on
+" ファイルタイプによっての設定のため
 autocmd BufRead,BufNewFile *.py setfiletype python
 
 " setting
@@ -194,7 +195,8 @@ inoremap <C-f> <right>
 inoremap <C-b> <left>
 let mapleader = "\<Space>"
 " pythonのハイライトを有効化する?
-let python_highlight_all = 1
+"let python_highlight_all = 1
+" vim diff を見やすくするため
 autocmd FilterWritePre * if &diff | setlocal wrap< | endif
 " texの数式表示のoff
 let g:tex_conceal = ''
@@ -212,85 +214,35 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 " https://github.com/Shougo/ddc-ui-native
 call ddc#custom#patch_global('ui', 'native')
 
-" Use around source.
-" https://github.com/Shougo/ddc-source-around
-call ddc#custom#patch_global('sources', ['around'])
-
-"Use file completion
-" なぜかdirectoryを認識していない? python にて /
-" をエスケープして補完している。。
-call ddc#custom#patch_global('sources', ['file'])
+call ddc#custom#patch_global('sources', ['around', 'file', 'vim-lsp'])
 
 " Use matcher_head and sorter_rank.
 " https://github.com/Shougo/ddc-matcher_head
 " https://github.com/Shougo/ddc-sorter_rank
-call ddc#custom#patch_global('sourceOptions', #{
-      \ _: #{
-      \   matchers: ['matcher_head'],
-      \   sorters: ['sorter_rank'],
+call ddc#custom#patch_global('sourceOptions', {
+      \ '_': {
+      \   'matchers': ['matcher_head'],
+      \   'sorters': ['sorter_rank'],
       \ },
+      \ 'vim-lsp': {
+      \   'matchers': ['matcher_head'],
+      \   'mark': 'lsp',
+      \ },
+      \ 'file': {
+      \   'mark': 'F',
+      \   'isVolatile': v:true,
+      \   'forceCompletionPattern': '\S/\S*'},
       \ })
 
-call ddc#custom#patch_global('sourceOptions', {
-    \ 'file': {
-    \   'mark': 'F',
-    \   'isVolatile': v:true,
-    \   'forceCompletionPattern': '\S/\S*',
-    \ }})
-
-call ddc#custom#patch_global('sourceParams', {
-      \ 'file': { 'trailingSlash': v:true},
-      \ })
-
-" for ddc-source-vim-lsp
-call ddc#custom#patch_global('sources', ['vim-lsp'])
-call ddc#custom#patch_global('sourceOptions', {
-    \ 'vim-lsp': {
-    \   'matchers': ['matcher_head'],
-    \   'mark': 'lsp',
-    \ },
-    \ })
-
-" if you want to use the unsupported CompleteProvider Server,
-" set true by'ignoreCompleteProvider'.
-call ddc#custom#patch_filetype(['css'], {
-   \ 'sourceParams': {
-   \   'vim-lsp': {
-   \     'ignoreCompleteProvider': v:true,
-   \   },
-   \ },
-   \ })
-
-
-" Change source options
-call ddc#custom#patch_global('sourceOptions', #{
-      \   around: #{ mark: 'A' },
-      \ })
-call ddc#custom#patch_global('sourceParams', #{
-      \   around: #{ maxSize: 500 },
-      \ })
-
-" Customize settings on a filetype
-call ddc#custom#patch_filetype(['c', 'cpp'], 'sources',
-      \ ['around', 'clangd'])
-call ddc#custom#patch_filetype(['c', 'cpp'], 'sourceOptions', #{
-      \   clangd: #{ mark: 'C' },
-      \ })
-call ddc#custom#patch_filetype('markdown', 'sourceParams', #{
-      \   around: #{ maxSize: 100 },
-      \ })
 
 " Mappings
-
 " <TAB>: completion.
 inoremap <silent><expr> <TAB>
 \ pumvisible() ? '<C-n>' :
 \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
 \ '<TAB>' : ddc#map#manual_complete()
-
 " <S-TAB>: completion back.
 inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
-
 " Use ddc.
 call ddc#enable()
 
