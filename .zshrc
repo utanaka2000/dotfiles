@@ -26,6 +26,7 @@ setopt print_eight_bit
 setopt complete_in_word
 setopt no_nomatch
 setopt share_history
+setopt inc_append_history
 setopt extended_history
 setopt nohup
 setopt hist_ignore_dups
@@ -46,14 +47,16 @@ SAVEHIST=10000
 
 export LSCOLORS='gxfxcxdxbxegexabagacad'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
 # peco
-function peco-history-selection() {
-   BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
-   CURSOR=$#BUFFER
-   zle reset-prompt
+function peco-select-history() {
+  BUFFER=$(\history -n -r 1 | peco --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle clear-screen
 }
-zle -N peco-history-selection
-bindkey '^R' peco-history-selection
+
+zle -N peco-select-history
+bindkey '^R' peco-select-history
 
 
 fpath=( $HOME/.zsh/zsh-completions/src $fpath)
