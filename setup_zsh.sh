@@ -26,3 +26,9 @@ brew install deno
 brew install neovim
 mkdir -p ~/.config/nvim/
 cp ./init.vim ~/.config/nvim/init.vim
+
+
+# for karabiner settings
+mkdir -p ~/.config/karabiner
+cp ./karabiner.json ~/.config/karabiner/karabiner.json
+
