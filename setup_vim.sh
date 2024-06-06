@@ -1,7 +1,10 @@
 #!/bin/bash
 
-ln -s $HOME/dotfiles/.vimrc $HOME/.vimrc
+cp $HOME/dotfiles/.vimrc $HOME/.vimrc
 mkdir -p $HOME/.vim/colors
-ln -s $HOME/dotfiles/.vim/colors/hybrid.vim $HOME/.vim/colors/hybrid.vim
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+cp $HOME/dotfiles/.vim/colors/hybrid.vim $HOME/.vim/colors/hybrid.vim
+# install vimplug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# for ddc
 brew install deno
