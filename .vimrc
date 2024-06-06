@@ -1,13 +1,12 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'prabirshrestha/asyncomplete.vim'
-Plugin 'prabirshrestha/asyncomplete-lsp.vim'
-Plugin 'prabirshrestha/vim-lsp'
+call plug#begin()
+" List your plugins here
+Plug 'VundleVim/Vundle.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
 " lspのpipの場所
 " $HOME/.local/share/vim-lsp-settings/servers/pylsp-all/venv/bin/pip3
 nnoremap K :<C-u>LspHover<CR>
@@ -26,36 +25,35 @@ let g:lsp_diagnostics_signs_enabled = 0
 let g:lsp_diagnostics_virtual_text_enabled = 0
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_diagnostics_float_cursor = 1
-Plugin 'mattn/vim-lsp-settings'
-Plugin 'mattn/vim-goimports'
+Plug 'mattn/vim-lsp-settings'
+Plug 'mattn/vim-goimports'
 
-Plugin 'Shougo/ddc.vim'
+Plug 'vim-denops/denops-helloworld.vim'
+Plug 'Shougo/ddc.vim'
 " deno が必要
-Plugin 'vim-denops/denops.vim'
+Plug 'vim-denops/denops.vim'
 
 " Install your UIs
-Plugin 'Shougo/ddc-ui-native'
+Plug 'Shougo/ddc-ui-native'
 
 " Install your sources
-Plugin 'Shougo/ddc-source-around'
-Plugin 'shun/ddc-source-vim-lsp'
-Plugin 'LumaKernel/ddc-file'
+Plug 'Shougo/ddc-source-around'
+Plug 'shun/ddc-source-vim-lsp'
+Plug 'LumaKernel/ddc-file'
 
 " Install your filters
-Plugin 'Shougo/ddc-matcher_head'
-Plugin 'Shougo/ddc-sorter_rank'
-Plugin 'Shougo/ddc-converter_remove_overlap'
-
-
+Plug 'Shougo/ddc-matcher_head'
+Plug 'Shougo/ddc-sorter_rank'
+Plug 'Shougo/ddc-converter_remove_overlap'
 
 
 " easy mostion
-Plugin 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 let g:EasyMotion_do_mapping = 0
 xmap <Space><Space> <Plug>(easymotion-s2)
 nmap <Space><Space> <Plug>(easymotion-overwin-f2)
 
-Plugin 'preservim/nerdtree' 
+Plug 'preservim/nerdtree'
 " ツリー幅
 let NERDTreeWinSize=24
 " ファイル名を指定せず開くとNERDTree, 指定すると開かない
@@ -65,21 +63,21 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-l> :NERDTreeToggle<CR>
 let g:NERDTreeIgnore = ['^__pycache__$']
 
-Plugin 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 " ウインドウサイズの調整
-Plugin 'simeji/winresizer'
+Plug 'simeji/winresizer'
 "コメントアウトのプラグイン
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 "git
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
-Plugin 'tpope/vim-surround'
-Plugin 'elzr/vim-json'
+Plug 'tpope/vim-surround'
+Plug 'elzr/vim-json'
 let g:vim_json_syntax_conceal = 0
 filetype plugin on
-call vundle#end()
 
+call plug#end()
 
 
 " 少しだけ変えているhybrid

@@ -38,7 +38,6 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 alias ls='ls -F -G'
-alias ls-a='ls -aFG'
 alias dpython='python3 -m ipdb -c continue'
 
 HISTFILE=$HOME/.zsh_history
@@ -54,7 +53,6 @@ function peco-select-history() {
   CURSOR=$#BUFFER
   zle clear-screen
 }
-
 zle -N peco-select-history
 bindkey '^R' peco-select-history
 
