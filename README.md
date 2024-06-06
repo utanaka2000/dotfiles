@@ -3,6 +3,7 @@
 ## Usage
 
 ```bash
+cd dotfiles
 sh setup.sh
 ```
 
@@ -12,7 +13,7 @@ sh setup.sh
   * `PlugInstall`
 
 * iterm2
-  * Set `Load preferences from a custom folder or URL` `~/dotfiles`
+  * Set `Load preferences from a custom folder or URL` `~/dotfiles/assets`
 
 ## Manual Install
 
