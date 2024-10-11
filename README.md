@@ -15,7 +15,7 @@ sh setup.sh
 * iterm2
   * Set `Load preferences from a custom folder or URL` `~/dotfiles/assets`
 
-## Manual Install
+## Installing Applications List
 
 * [iterm2](https://iterm2.com/)
 
