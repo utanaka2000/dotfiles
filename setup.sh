@@ -30,6 +30,16 @@ cp ./assets/init.vim ~/.config/nvim/init.vim
 
 
 # for karabiner settings
+brew install --cask karabiner-elements
 mkdir -p ~/.config/karabiner
 cp ./assets/karabiner.json ~/.config/karabiner/karabiner.json
 
+
+# for install mac applications
+brew install --cask iterm2
+brew install --cask clipy
+brew install --cask rectangle
+brew install --cask visual-studio-code
+brew install --cask flux
+brew install --cask google-chrome
+brew install --cask MonitorControl
