@@ -42,4 +42,3 @@ brew install --cask rectangle
 brew install --cask visual-studio-code
 brew install --cask flux
 brew install --cask google-chrome
-brew install --cask MonitorControl
