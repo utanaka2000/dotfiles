@@ -2,6 +2,7 @@
 
 DOTFILES_DIR=$HOME/dotfiles
 OS_TYPE="$(uname -s)"
+echo "OS_TYPE: $OS_TYPE"
 
 # install homebrew
 if [ "$OS_TYPE" = "Darwin" ]; then
