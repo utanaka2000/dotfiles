@@ -10,7 +10,7 @@ if [ "$OS_TYPE" = "Darwin" ]; then
         brew update
         brew bundle --file="$DOTFILES_DIR/Brewfile"
     fi
-
+fi
 
 # for zsh settings
 mkdir -p $HOME/.zsh
