@@ -91,7 +91,9 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^md\\.obsidian$"
+                                            "^md\\.obsidian$",
+                                            "^com\\.google\\.Chrome",
+                                            "^com\\.microsoft\\.VSCode"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -121,7 +123,9 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^md\\.obsidian$"
+                                            "^md\\.obsidian$",
+                                            "^com\\.google\\.Chrome",
+                                            "^com\\.microsoft\\.VSCode"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -151,7 +155,9 @@
                                             "^com\\.apple\\.Terminal$",
                                             "^org\\.vim\\.",
                                             "^com\\.googlecode\\.iterm2$",
-                                            "^md\\.obsidian$"
+                                            "^md\\.obsidian$",
+                                            "^com\\.google\\.Chrome",
+                                            "^com\\.microsoft\\.VSCode"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -180,6 +186,15 @@
                         "description": "Ctrl+p/Ctrl+n to arrow up/down",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "p",
                                     "modifiers": {
@@ -196,6 +211,15 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "n",
                                     "modifiers": {
@@ -217,6 +241,15 @@
                         "description": "Map ctrl+b/ctrl+f to left/right arrow",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "b",
                                     "modifiers": {
@@ -233,6 +266,15 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "f",
                                     "modifiers": {
