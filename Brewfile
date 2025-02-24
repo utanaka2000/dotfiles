@@ -1,1 +1,11 @@
 brew 'vim'
+brew 'neovim'
+brew 'peco'
+
+cask 'karabiner-elements'
+cask 'iterm2'
+cask 'google-chrome'
+cask 'clipy'
+cask 'rectangle'
+cask 'visual-studio-code'
+cask 'flux'
