@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 DOTFILES_DIR=$HOME/dotfiles
 OS_TYPE="$(uname -s)"
