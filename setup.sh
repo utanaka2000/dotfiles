@@ -23,7 +23,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # for install neovim
 brew install neovim
 mkdir -p ~/.config/nvim/
-cp ./assets/init.vim ~/.config/nvim/init.vim
+cp ./assets/nvim/init.lua ~/.config/nvim/init.lua
 
 
 # for karabiner settings
