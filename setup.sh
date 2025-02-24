@@ -9,13 +9,13 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosugges
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-completions ~/.zsh/zsh-completions
 brew install peco
-cp ./assets/.zshrc ~/
+cp ./.zshrc ~/
 source ~/.zshrc
 
 
 # for vim settings
 brew install vim
-cp -r ./assets/vim/* ~/
+cp -r ./vim/* ~/
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -23,13 +23,13 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # for install neovim
 brew install neovim
 mkdir -p ~/.config/nvim/
-cp ./assets/nvim/init.lua ~/.config/nvim/init.lua
+cp ./nvim/init.lua ~/.config/nvim/init.lua
 
 
 # for karabiner settings
 brew install --cask karabiner-elements
 mkdir -p ~/.config/karabiner
-cp ./assets/karabiner.json ~/.config/karabiner/karabiner.json
+cp ./karabiner.json ~/.config/karabiner/karabiner.json
 
 
 # for install mac applications
