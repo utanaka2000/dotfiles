@@ -19,7 +19,6 @@ git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.zsh/zsh-autosu
 git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.zsh/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-completions $HOME/.zsh/zsh-completions
 ln -sf $DOTFILES_DIR/.zshrc $HOME/.zshrc
-source $HOME/.zshrc
 
 
 # for vim settings
