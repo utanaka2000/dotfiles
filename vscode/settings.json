@@ -1,0 +1,54 @@
+{
+  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#00ff04"
+  },
+  "editor.wordWrap": "on",
+  "github.copilot.advanced": {},
+  "[markdown]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.markdownlint": "explicit"
+    }
+  },
+  "[python]": {
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.formatOnType": true,
+    "editor.wordBasedSuggestions": "off",
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+    },
+  },
+  "isort.args":["--profile", "black"],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.suggest.insertMode": "replace"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "mdx.server.enable": true,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "git.confirmSync": false,
+  "explorer.confirmDelete": false,
+  "vim.useSystemClipboard": true,
+  "cSpell.enabledFileTypes": {
+    "*": false,
+    "scminput": true
+  }
+}

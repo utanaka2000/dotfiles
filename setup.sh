@@ -25,18 +25,22 @@ source $HOME/.zshrc
 # for vim settings
 mkdir -p $HOME/.vim/colors
 ln -sf $DOTFILES_DIR/vim/.vimrc $HOME/.vimrc
-ln -sf $DOTFILES_DIR/dotfiles/vim/.vim/colors $HOME/.vim/colors
+ln -sf $DOTFILES_DIR/dotfiles/vim/.vim/colors $HOME/.vim/
 curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
 # for install neovim
 mkdir -p $HOME/.config/nvim
-ln -sf $DOTFILES_DIR/nvim $HOME/.config/nvim
+ln -sf $DOTFILES_DIR/nvim $HOME/.config/
 
 
-# for karabiner settings
 if [ "$OS_TYPE" = "Darwin" ]; then
+    # for karabiner settings
     mkdir -p $HOME/.config/karabiner
     ln -sf $DOTFILES_DIR/karabiner.json $HOME/.config/karabiner/karabiner.json
+
+    # for vscode settings
+    ln -sf $DOTFILES_DIR/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
+    ln -sf $DOTFILES_DIR/vscode/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
 fi
