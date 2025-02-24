@@ -1,0 +1,33 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+w h",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "ctrl+w l",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "ctrl+w k",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "ctrl+w j",
+        "command": "workbench.action.navigateDown"
+    },
+    {
+        "key": "s",
+        "command": "explorer.openToSide",
+        "when": "explorerViewletFocus && explorerViewletVisible && !explorerResourceIsFolder && !inputFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.toggleSidebarVisibility",
+    },
+    {
+        "key": "ctrl+w c",
+        "command": "workbench.action.closeActiveEditor",
+        "when": "editorTextFocus"
+    }
+]
