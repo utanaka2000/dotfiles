@@ -14,8 +14,9 @@ source ~/.zshrc
 
 
 # for vim settings
-brew install vim
-cp -r ./vim/* ~/
+mkdir -p ~/.vim
+ln -sf ~/dotfiles/vim/.vimrc ~/.vimrc
+ln -sf ~/dotfiles/vim/.vim/colors ~/.vim/
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
