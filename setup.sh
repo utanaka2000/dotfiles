@@ -30,12 +30,12 @@ curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
 
 
 # for install neovim
-mkdir -p $HOME/.config/nvim/
-ln -sf $DOTFILES_DIR/nvim/init.lua $HOME/.config/nvim/init.lua
+mkdir -p $HOME/.config/nvim
+ln -sf $DOTFILES_DIR/nvim $HOME/.config/nvim
 
 
 # for karabiner settings
 if [ "$OS_TYPE" = "Darwin" ]; then
     mkdir -p $HOME/.config/karabiner
-    ln -sf ./karabiner.json ~/.config/karabiner/karabiner.json
+    ln -sf $DOTFILES_DIR/karabiner.json $HOME/.config/karabiner/karabiner.json
 fi
