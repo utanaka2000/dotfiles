@@ -13,7 +13,7 @@ sh setup.sh
   * `PlugInstall`
 
 * iterm2
-  * Set `Load preferences from a custom folder or URL` `~/dotfiles/assets`
+  * Set `Load preferences from a custom folder or URL` `~/dotfiles`
 
 ## Installing Applications List
 
