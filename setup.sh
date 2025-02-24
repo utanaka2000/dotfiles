@@ -23,15 +23,15 @@ source $HOME/.zshrc
 
 
 # for vim settings
-mkdir -p $HOME/.vim/colors
+mkdir -p $HOME/.vim
 ln -sf $DOTFILES_DIR/vim/.vimrc $HOME/.vimrc
-ln -sf $DOTFILES_DIR/dotfiles/vim/.vim/colors $HOME/.vim/
+ln -sf $DOTFILES_DIR/vim/colors $HOME/.vim/
 curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
 # for install neovim
-mkdir -p $HOME/.config/nvim
+mkdir -p $HOME/.config
 ln -sf $DOTFILES_DIR/nvim $HOME/.config/
 
 
