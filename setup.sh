@@ -24,14 +24,14 @@ ln -sf $DOTFILES_DIR/.zshrc $HOME/.zshrc
 # for vim settings
 mkdir -p $HOME/.vim
 ln -sf $DOTFILES_DIR/vim/.vimrc $HOME/.vimrc
-ln -sf $DOTFILES_DIR/vim/colors $HOME/.vim/
+ln -sf $DOTFILES_DIR/vim/colors $HOME/.vim
 curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
 # for install neovim
 mkdir -p $HOME/.config
-ln -sf $DOTFILES_DIR/nvim $HOME/.config/
+ln -sf $DOTFILES_DIR/nvim $HOME/.config
 
 
 if [ "$OS_TYPE" = "Darwin" ]; then
