@@ -3,7 +3,7 @@
 ## Usage
 
 ```bash
-cd dotfiles
+cd $HOME/dotfiles
 sh setup.sh
 ```
 
