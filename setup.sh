@@ -36,8 +36,7 @@ ln -sf $DOTFILES_DIR/nvim $HOME/.config/
 
 if [ "$OS_TYPE" = "Darwin" ]; then
     # for karabiner settings
-    mkdir -p $HOME/.config/karabiner
-    ln -sf $DOTFILES_DIR/karabiner.json $HOME/.config/karabiner/karabiner.json
+    ln -sf $DOTFILES_DIR/karabiner $HOME/.config
 
     # for vscode settings
     ln -sf $DOTFILES_DIR/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
