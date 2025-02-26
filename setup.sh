@@ -23,8 +23,9 @@ ln -sf $DOTFILES_DIR/.zshrc $HOME/.zshrc
 
 # vim
 mkdir -p $HOME/.vim
-ln -sf $DOTFILES_DIR/vim/.vimrc $HOME/.vimrc
-ln -sf $DOTFILES_DIR/vim/colors $HOME/.vim
+ln -sf $DOTFILES_DIR/.vimrc $HOME/.vimrc
+curl -fLo $HOME/.vim/colors/hybrid.vim --create-dirs \
+    https://raw.githubusercontent.com/w0ng/vim-hybrid/master/colors/hybrid.vim
 curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
