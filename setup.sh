@@ -13,6 +13,10 @@ if [ "$OS_TYPE" = "Darwin" ]; then
     brew bundle --file="$DOTFILES_DIR/Brewfile"
 fi
 
+# git
+git config --global user.name utanaka2000
+git config --global user.email 27200337+utanaka2000@users.noreply.github.com
+
 # zsh
 mkdir -p $HOME/.zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.zsh/zsh-autosuggestions
