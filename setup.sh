@@ -8,9 +8,9 @@ echo "OS_TYPE: $OS_TYPE"
 if [ "$OS_TYPE" = "Darwin" ]; then
     if ! command -v brew &> /dev/null; then
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        brew update
-        brew bundle --file="$DOTFILES_DIR/Brewfile"
     fi
+    brew update
+    brew bundle --file="$DOTFILES_DIR/Brewfile"
 fi
 
 # zsh
